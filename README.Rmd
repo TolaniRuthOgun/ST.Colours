@@ -1,0 +1,109 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# ST.Colours
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of ST.Colours is to create an accessible and vibrant package for data visualization.
+
+## Installation
+
+You can install the development version of ST.Colours like so:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("TolaniRuthOgun/ST.Colours")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(palettes)
+library(ggplot2)
+library(scales)
+library(ST.Colours)
+ggplot(data.frame(x = rnorm(10000), y = rnorm(10000)), aes(x = x, y = y)) +
+  geom_hex() + coord_fixed() + scale_fill_palette_b(ST.Colours$Purple) 
+
+```
+
+
+Using ST.Colours with other packages (by https://github.com/mccarthy-m-g)
+- [Using palettes with ggplot2](https://mccarthy-m-g.github.io/palettes/articles/ggplot2.html)
+- [Using palettes with gt](https://mccarthy-m-g.github.io/palettes/articles/gt.html)
+- [Using palettes with biscale](https://mccarthy-m-g.github.io/palettes/articles/biscale.html)
+- [Compatibility with other colour packages](https://mccarthy-m-g.github.io/palettes/articles/compatibility.html)
+
+##Included Palettes
+
+```{r }
+plot(ST.Colours::ST.Colours)
+```
+ST.Colours comes with a set of `r length(ST.Colours_discrete)` discrete colour palettes, and `r length(ST.Colours_sequential)` sequential colour palettes, which can be accessed from the following R objects:
+
+- `ST.Colours_discrete` for discrete palettes
+- `ST.Colours_sequential` for sequential palettes
+- `ST.Colours` for all palettes
+
+To preview the palettes in the console simply print them:
+
+```{r asciicast ST.Colours_discrete}
+ST.Colours_discrete
+```
+
+To preview the palettes in the Plots pane use `plot()`:
+
+```{r ST.Colours_sequential}
+plot(ST.Colours_sequential)
+```
+
+
+
+Palettes can be subset using `[`, `[[`, and `$`.
+
+  - To extract one or more palettes use `[`:
+
+```{r asciicast extract-palette}
+    ST.Colours_sequential[c("Teal", "Coral")]
+```
+  
+  - To extract a single palette as a colour vector use `[[` or `$`:
+
+    ```{r asciicast extract-vector-1}
+    ST.Colours_sequential[["Teal"]]
+    ```
+    
+    ```{r asciicast extract-vector-2}
+    ST.Colours_sequential$Purple
+    ```
+    
+  - To get names of palettes use `names()`:
+
+    ```{r}
+    names(ST.Colours_sequential)
+    ```
+
+## Documentation
+
+See also documentation for the palettes package at [`https://mccarthy-m-g.github.io/palettes/`](https://mccarthy-m-g.github.io/palettes/reference/index.html) or in the installed package: `help(package = "palettes")`.
+
+## License
+
+CC0
+
