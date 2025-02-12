@@ -9,21 +9,21 @@
 \format{
 \subsection{\code{ST.Colours}}{
 
-An object of class \code{palettes_palette} with 10
+An object of class \code{palettes_palette} with 18
 colour palettes. Use \code{names(ST.Colours)} to return all palette names.
 }
 
 \subsection{\code{ST.Colours_discrete}}{
 
 An object of class \code{palettes_palette} with
-3 discrete colour palettes.
+10 discrete colour palettes.
 Use \code{names(ST.Colours_discrete)} to return all palette names.
 }
 
 \subsection{\code{ST.Colours_sequential}}{
 
 An object of class \code{palettes_palette} with
-7 sequential colour palettes.
+8 sequential colour palettes.
 Use \code{names(ST.Colours_sequential)} to return all palette names.
 }
 }
